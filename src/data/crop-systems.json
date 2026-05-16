@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-05-17",
+  "cropSystems": [
+    {
+      "id": "oil_palm_immature",
+      "label": "Oil palm — immature (years 0 to 3)",
+      "mix": [
+        { "species": "pueraria_javanica", "ratePerHaKg": 2.0 },
+        { "species": "centrosema_pubescens", "ratePerHaKg": 1.5 },
+        { "species": "calopogonium_mucunoides", "ratePerHaKg": 2.5 },
+        { "species": "calopogonium_caeruleum", "ratePerHaKg": 1.5 }
+      ],
+      "totalSeedRateKgHa": 7.5,
+      "establishmentWeeksLow": 12,
+      "establishmentWeeksHigh": 16,
+      "nFixKgHaYrMidpoint": 110,
+      "notes": "PORIM-recommended four-species mix. Standard for new oil palm plantings on lowland tropical soils."
+    },
+    {
+      "id": "oil_palm_mature",
+      "label": "Oil palm — mature (years 4+)",
+      "mix": [
+        { "species": "mucuna_bracteata", "ratePerHaKg": 2.5 }
+      ],
+      "totalSeedRateKgHa": 2.5,
+      "establishmentWeeksLow": 16,
+      "establishmentWeeksHigh": 24,
+      "nFixKgHaYrMidpoint": 175,
+      "notes": "Mucuna bracteata monoculture is the standard for mature oil palm due to shade tolerance and deep rooting."
+    },
+    {
+      "id": "rubber_young",
+      "label": "Rubber — young (years 0 to 3)",
+      "mix": [
+        { "species": "pueraria_javanica", "ratePerHaKg": 1.5 },
+        { "species": "centrosema_pubescens", "ratePerHaKg": 1.5 },
+        { "species": "calopogonium_mucunoides", "ratePerHaKg": 2.0 },
+        { "species": "calopogonium_caeruleum", "ratePerHaKg": 1.0 }
+      ],
+      "totalSeedRateKgHa": 6.0,
+      "establishmentWeeksLow": 12,
+      "establishmentWeeksHigh": 16,
+      "nFixKgHaYrMidpoint": 100,
+      "notes": "PORIM four-species mix at slightly lower rate. RRIM-validated for young rubber."
+    },
+    {
+      "id": "rubber_mature",
+      "label": "Rubber — mature (tapping phase)",
+      "mix": [
+        { "species": "mucuna_bracteata", "ratePerHaKg": 2.0 },
+        { "species": "centrosema_pubescens", "ratePerHaKg": 1.0 }
+      ],
+      "totalSeedRateKgHa": 3.0,
+      "establishmentWeeksLow": 16,
+      "establishmentWeeksHigh": 20,
+      "nFixKgHaYrMidpoint": 160,
+      "notes": "Mucuna-led with Centrosema secondary. Manage Mucuna away from tapping panels."
+    },
+    {
+      "id": "fruit_tree",
+      "label": "Fruit tree (durian, mango, mangosteen, citrus, generic)",
+      "mix": [
+        { "species": "pueraria_javanica", "ratePerHaKg": 1.5 },
+        { "species": "centrosema_pubescens", "ratePerHaKg": 1.5 },
+        { "species": "calopogonium_mucunoides", "ratePerHaKg": 1.0 }
+      ],
+      "totalSeedRateKgHa": 4.0,
+      "establishmentWeeksLow": 12,
+      "establishmentWeeksHigh": 16,
+      "nFixKgHaYrMidpoint": 90,
+      "notes": "Lighter mix for fruit orchard ground cover. Adjust for canopy shade as trees mature."
+    },
+    {
+      "id": "smallholder_mixed",
+      "label": "Smallholder mixed perennial / annual",
+      "mix": [
+        { "species": "pueraria_javanica", "ratePerHaKg": 2.0 },
+        { "species": "calopogonium_mucunoides", "ratePerHaKg": 2.0 }
+      ],
+      "totalSeedRateKgHa": 4.0,
+      "establishmentWeeksLow": 10,
+      "establishmentWeeksHigh": 14,
+      "nFixKgHaYrMidpoint": 85,
+      "notes": "Budget mix for smallholder use. Lower cost; expects reseeding effort."
+    }
+  ],
+  "fertilizerOffset": {
+    "ureaNContentPercent": 46,
+    "ureaPriceRmPerKgDefault": 2.5,
+    "biologicalNEfficiencyFactor": 0.7,
+    "notes": "1 kg N approx 2.17 kg urea (100/46). Multiply fixed N by 2.17, then by urea price, then by efficiency factor 0.7 to estimate year-one fertilizer offset value."
+  }
+}
