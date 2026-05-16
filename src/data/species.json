@@ -1,0 +1,173 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-05-17",
+  "species": [
+    {
+      "id": "mucuna_bracteata",
+      "binomial": "Mucuna bracteata",
+      "shortCode": "MB",
+      "seedRateMonoKgHa": 2.5,
+      "seedRateMixKgHa": 1.5,
+      "establishmentWeeksLow": 16,
+      "establishmentWeeksHigh": 24,
+      "nFixKgHaYrLow": 150,
+      "nFixKgHaYrHigh": 200,
+      "biomassTHaYrLow": 8,
+      "biomassTHaYrHigh": 12,
+      "regionScores": {
+        "peninsular_malaysia": 95,
+        "sabah": 90,
+        "sarawak": 90,
+        "sea_general": 85,
+        "africa_humid": 70,
+        "latam_humid": 70
+      },
+      "altitudeScores": {
+        "lowland": 95,
+        "mid_elevation": 80,
+        "upland": 50
+      },
+      "rainfallScores": {
+        "under_1500": 40,
+        "1500_2500": 90,
+        "2500_3500": 95,
+        "over_3500": 85
+      }
+    },
+    {
+      "id": "pueraria_javanica",
+      "binomial": "Pueraria javanica",
+      "synonym": "Pueraria phaseoloides",
+      "shortCode": "PJ",
+      "seedRateMonoKgHa": 3.5,
+      "seedRateMixKgHa": 1.5,
+      "establishmentWeeksLow": 12,
+      "establishmentWeeksHigh": 16,
+      "nFixKgHaYrLow": 100,
+      "nFixKgHaYrHigh": 140,
+      "biomassTHaYrLow": 5,
+      "biomassTHaYrHigh": 8,
+      "regionScores": {
+        "peninsular_malaysia": 95,
+        "sabah": 90,
+        "sarawak": 90,
+        "sea_general": 90,
+        "africa_humid": 80,
+        "latam_humid": 80
+      },
+      "altitudeScores": {
+        "lowland": 95,
+        "mid_elevation": 75,
+        "upland": 40
+      },
+      "rainfallScores": {
+        "under_1500": 50,
+        "1500_2500": 95,
+        "2500_3500": 90,
+        "over_3500": 75
+      }
+    },
+    {
+      "id": "centrosema_pubescens",
+      "binomial": "Centrosema pubescens",
+      "shortCode": "CP",
+      "seedRateMonoKgHa": 3,
+      "seedRateMixKgHa": 1.5,
+      "establishmentWeeksLow": 12,
+      "establishmentWeeksHigh": 16,
+      "nFixKgHaYrLow": 80,
+      "nFixKgHaYrHigh": 130,
+      "biomassTHaYrLow": 4,
+      "biomassTHaYrHigh": 6,
+      "regionScores": {
+        "peninsular_malaysia": 90,
+        "sabah": 90,
+        "sarawak": 90,
+        "sea_general": 90,
+        "africa_humid": 85,
+        "latam_humid": 90
+      },
+      "altitudeScores": {
+        "lowland": 90,
+        "mid_elevation": 85,
+        "upland": 60
+      },
+      "rainfallScores": {
+        "under_1500": 60,
+        "1500_2500": 90,
+        "2500_3500": 90,
+        "over_3500": 75
+      }
+    },
+    {
+      "id": "calopogonium_mucunoides",
+      "binomial": "Calopogonium mucunoides",
+      "shortCode": "CM",
+      "seedRateMonoKgHa": 3,
+      "seedRateMixKgHa": 2.5,
+      "establishmentWeeksLow": 8,
+      "establishmentWeeksHigh": 12,
+      "nFixKgHaYrLow": 70,
+      "nFixKgHaYrHigh": 110,
+      "biomassTHaYrLow": 3,
+      "biomassTHaYrHigh": 5,
+      "regionScores": {
+        "peninsular_malaysia": 90,
+        "sabah": 85,
+        "sarawak": 85,
+        "sea_general": 85,
+        "africa_humid": 75,
+        "latam_humid": 80
+      },
+      "altitudeScores": {
+        "lowland": 95,
+        "mid_elevation": 75,
+        "upland": 50
+      },
+      "rainfallScores": {
+        "under_1500": 55,
+        "1500_2500": 90,
+        "2500_3500": 85,
+        "over_3500": 70
+      }
+    },
+    {
+      "id": "calopogonium_caeruleum",
+      "binomial": "Calopogonium caeruleum",
+      "shortCode": "CC",
+      "seedRateMonoKgHa": 2.5,
+      "seedRateMixKgHa": 1.5,
+      "establishmentWeeksLow": 12,
+      "establishmentWeeksHigh": 16,
+      "nFixKgHaYrLow": 60,
+      "nFixKgHaYrHigh": 100,
+      "biomassTHaYrLow": 3,
+      "biomassTHaYrHigh": 5,
+      "regionScores": {
+        "peninsular_malaysia": 85,
+        "sabah": 85,
+        "sarawak": 85,
+        "sea_general": 80,
+        "africa_humid": 70,
+        "latam_humid": 75
+      },
+      "altitudeScores": {
+        "lowland": 90,
+        "mid_elevation": 80,
+        "upland": 55
+      },
+      "rainfallScores": {
+        "under_1500": 55,
+        "1500_2500": 85,
+        "2500_3500": 90,
+        "over_3500": 75
+      }
+    }
+  ],
+  "axisWeights": {
+    "rainfall": 0.5,
+    "altitude": 0.3,
+    "region": 0.2
+  },
+  "notes": "All values are conservative midpoints drawn from MPOB, RRIM, Pertanika JTAS, CIAT Tropical Forages, and FAO Grassland Index. See docs/data-sources.md for the bibliography. Per-species ranges are detailed in docs/species-reference.md."
+}
