@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tropical Cover Crop Calculator — Web Embed Example</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #1c1c1c; }
+    h1 { font-size: 1.5rem; }
+    label { display: block; margin-top: 1rem; font-weight: 600; }
+    select, input { width: 100%; padding: 0.5rem; font-size: 1rem; border: 1px solid #999; border-radius: 4px; }
+    button { margin-top: 1.5rem; padding: 0.75rem 1.5rem; font-size: 1rem; background: #2e7d32; color: #fff; border: 0; border-radius: 4px; cursor: pointer; }
+    #out { margin-top: 2rem; padding: 1rem; background: #f5f5f5; border-radius: 4px; white-space: pre-wrap; font-family: monospace; }
+    footer { margin-top: 3rem; font-size: 0.85rem; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Tropical Cover Crop Calculator</h1>
+  <p>Open-source planning tool by <a href="https://chemiseed.com">Chemiseed Sdn. Bhd.</a></p>
+
+  <label for="hectares">Field area (hectares)</label>
+  <input id="hectares" type="number" value="25" min="0.1" step="0.1">
+
+  <label for="system">Crop system</label>
+  <select id="system">
+    <option value="oil_palm_immature">Oil palm — immature</option>
+    <option value="oil_palm_mature">Oil palm — mature</option>
+    <option value="rubber_young">Rubber — young</option>
+    <option value="rubber_mature">Rubber — mature</option>
+    <option value="fruit_tree">Fruit tree</option>
+    <option value="smallholder_mixed">Smallholder mixed</option>
+  </select>
+
+  <button id="go">Calculate</button>
+
+  <pre id="out">Results will appear here.</pre>
+
+  <footer>
+    Data sources: MPOB, RRIM, Pertanika JTAS, CIAT, FAO. See <a href="https://github.com/chemiseedkudzuseeds/tropical-cover-crop-calculator/blob/main/docs/data-sources.md">docs/data-sources.md</a>.
+    <br>This calculator is a planning aid; consult a local agronomist for production decisions.
+  </footer>
+
+  <script type="module">
+    import { calculateCoverCropPlan } from '../src/cover-crop-calculator.js';
+    document.getElementById('go').addEventListener('click', () => {
+      const ha = parseFloat(document.getElementById('hectares').value);
+      const sys = document.getElementById('system').value;
+      const plan = calculateCoverCropPlan({ hectares: ha, cropSystem: sys });
+      document.getElementById('out').textContent = JSON.stringify(plan, null, 2);
+    });
+  </script>
+</body>
+</html>
