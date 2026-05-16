@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Tropical Cover Crop Calculator"
+abstract: >
+  Open-source seed-rate, nitrogen-fixation, and climate-suitability calculators
+  for tropical leguminous cover crops under oil palm, rubber, fruit-tree, and
+  smallholder mixed cropping systems. Parameters sourced from MPOB Oil Palm
+  Bulletin, RRIM rubber agronomy handbooks, Pertanika JTAS, PORIM bulletins,
+  CIAT forage datasheets, and FAO Grassland Index.
+authors:
+  - family-names: "Abdul"
+    given-names: "Shaharil"
+    affiliation: "Chemiseed Sdn. Bhd."
+    email: "shaharil@chemiseed.com"
+  - name: "Chemiseed Sdn. Bhd."
+    website: "https://chemiseed.com"
+    address: "Selangor, Malaysia"
+version: "1.0.0"
+date-released: "2026-05-17"
+license: "MIT"
+repository-code: "https://github.com/chemiseed/tropical-cover-crop-calculator"
+url: "https://chemiseed.com"
+keywords:
+  - cover crops
+  - tropical agriculture
+  - nitrogen fixation
+  - oil palm
+  - rubber
+  - soil health
+  - Mucuna bracteata
+  - Pueraria javanica
+  - Centrosema pubescens
+  - Calopogonium
+  - Malaysia
+  - agronomy
+  - agtech
+  - open data
+type: software
