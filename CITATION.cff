@@ -18,8 +18,12 @@ authors:
 version: "1.0.0"
 date-released: "2026-05-17"
 license: "MIT"
-repository-code: "https://github.com/chemiseed/tropical-cover-crop-calculator"
+repository-code: "https://github.com/chemiseedkudzuseeds/tropical-cover-crop-calculator"
 url: "https://chemiseed.com"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20244236"
+    description: "Companion meta-dataset on Zenodo: tropical cover crop performance records (50 entries, primary sources cited)"
 keywords:
   - cover crops
   - tropical agriculture
