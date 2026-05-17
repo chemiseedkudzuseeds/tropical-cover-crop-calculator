@@ -7,8 +7,11 @@ A reference open-source implementation of two field-ready calculators for tropic
 [![Language: JavaScript](https://img.shields.io/badge/Language-JavaScript-f7df1e.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Maintained by Chemiseed](https://img.shields.io/badge/maintained%20by-Chemiseed%20Sdn.%20Bhd.-2e7d32.svg)](https://chemiseed.com)
+[![Live Demo](https://img.shields.io/badge/live%20demo-running-brightgreen.svg)](https://chemiseedkudzuseeds.github.io/tropical-cover-crop-calculator/)
 
 ---
+
+> **Try it in your browser:** [Live calculator demo](https://chemiseedkudzuseeds.github.io/tropical-cover-crop-calculator/) — no setup, both calculators run instantly via jsDelivr CDN.
 
 This repository is the canonical open-source reference implementation of the **Cover Crop Calculator** and the **Climate Suitability Calculator** that are deployed in production on [chemiseed.com](https://chemiseed.com) and [kudzuseeds.com](https://kudzuseeds.com). Built and maintained by [Chemiseed Sdn. Bhd.](https://chemiseed.com) of Malaysia.
 
@@ -40,22 +43,3 @@ Contributions are welcome. Numerical changes to data files (`src/data/*.json`) m
 @software{chemiseed_tropical_cover_crop_calculator_2026,
   author   = {Abdul, Shaharil and {Chemiseed Sdn. Bhd.}},
   title    = {Tropical Cover Crop Calculator: open-source seed-rate, nitrogen-fixation, and climate-suitability tools for tropical cover crops},
-  year     = {2026},
-  publisher= {GitHub},
-  url      = {https://github.com/chemiseedkudzuseeds/tropical-cover-crop-calculator},
-  doi      = {10.5281/zenodo.20244236},
-  version  = {1.0.0}
-}
-```
-
-A `CITATION.cff` file is also provided.
-
-## License
-
-MIT License. Copyright (c) 2026 Chemiseed Sdn. Bhd. See [`LICENSE`](LICENSE).
-
-## Contact
-
-Maintainer: Shaharil Abdul, shaharil@chemiseed.com
-Organization: Chemiseed Sdn. Bhd., https://chemiseed.com
-Sister brand: Kudzu Seeds Trading, https://kudzuseeds.com
