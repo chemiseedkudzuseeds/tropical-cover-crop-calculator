@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tropical Cover Crop Calculator — Chemiseed Sdn. Bhd.</title>
+<meta name="description" content="Open-source seed-rate and climate-suitability calculators for tropical leguminous cover crops in oil palm, rubber, fruit, and smallholder mixed cropping. By Chemiseed Sdn. Bhd., Malaysia.">
+<meta property="og:title" content="Tropical Cover Crop Calculator">
+<meta property="og:description" content="Open-source agronomy tools by Chemiseed Sdn. Bhd.">
+<meta property="og:url" content="https://chemiseedkudzuseeds.github.io/tropical-cover-crop-calculator/">
+<link rel="canonical" href="https://chemiseedkudzuseeds.github.io/tropical-cover-crop-calculator/">
+<style>
+:root { --green:#2e7d32; --bg:#f8f9fa; --text:#1a1a1a; --muted:#666; }
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; max-width: 880px; margin: 0 auto; padding: 2rem 1rem; line-height: 1.55; color: var(--text); background: var(--bg); }
+header { border-bottom: 2px solid var(--green); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+h1 { color: var(--green); margin: 0 0 .25rem; font-size: 1.85rem; }
+.tagline { color: var(--muted); margin: 0; font-size: 15px; }
+.badges { margin: 1rem 0 0; }
+.badges img { margin-right: 6px; vertical-align: middle; }
+section { background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+h2 { color: var(--green); margin-top: 0; font-size: 1.3rem; }
+pre { background: #f0f0f0; padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: 13px; }
+code { font-family: ui-monospace, Menlo, monospace; }
+button { background: var(--green); color: white; border: 0; padding: .6rem 1.2rem; border-radius: 4px; cursor: pointer; font-size: 14px; margin-top: 1rem; }
+button:hover { background: #1b5e20; }
+.result { margin-top: 1rem; padding: 1rem; background: #f5f5f5; border-left: 3px solid var(--green); border-radius: 0 4px 4px 0; }
+.result h3 { margin: 0 0 .5rem; color: var(--green); font-size: 15px; }
+.result pre { background: white; margin: 0; font-size: 12px; }
+label { display: block; margin: .5rem 0 .25rem; font-weight: 500; font-size: 14px; }
+input, select { width: 100%; padding: .5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; background: white; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd; color: var(--muted); font-size: 13px; }
+footer a { color: var(--green); }
+</style>
+</head>
+<body>
+<header>
+<h1>Tropical Cover Crop Calculator</h1>
+<p class="tagline">Open-source seed-rate, nitrogen-fixation, and climate-suitability tools for oil palm, rubber, fruit, and smallholder mixed cropping. By Chemiseed Sdn. Bhd., Malaysia.</p>
+<div class="badges">
+<a href="https://github.com/chemiseedkudzuseeds/tropical-cover-crop-calculator"><img src="https://img.shields.io/github/stars/chemiseedkudzuseeds/tropical-cover-crop-calculator?style=social" alt="GitHub stars"></a>
+<a href="https://doi.org/10.5281/zenodo.20244236"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.20244236.svg" alt="Zenodo DOI"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+</div>
+</header>
+
+<section>
+<h2>Cover Crop Calculator</h2>
+<p>Plan seed orders for tropical leguminous cover crops by hectares and crop system.</p>
+<div class="row">
+<div>
+<label for="ha">Hectares to plant</label>
+<input id="ha" type="number" value="25" min="1" step="0.5">
+</div>
+<div>
+<label for="cs">Crop system</label>
+<select id="cs">
+<option value="oil_palm_immature">Oil palm, immature (years 1 to 3)</option>
+<option value="oil_palm_mature">Oil palm, mature</option>
+<option value="rubber_immature">Rubber, immature</option>
+<option value="rubber_mature">Rubber, mature</option>
+<option value="fruit_tree">Fruit tree</option>
+<option value="smallholder">Smallholder mixed</option>
+</select>
+</div>
+</div>
+<button onclick="runCcc()">Calculate seed rates</button>
+<div id="ccr"></div>
+</section>
+
+<section>
+<h2>Climate Suitability Calculator</h2>
+<p>Score how well your region matches cover crop optimal ranges.</p>
+<div class="row">
+<div>
+<label for="rg">Region</label>
+<select id="rg">
+<option value="peninsular_malaysia">Peninsular Malaysia</option>
+<option value="sabah_sarawak">Sabah and Sarawak</option>
+<option value="kalimantan">Kalimantan</option>
+<option value="sumatra">Sumatra</option>
+<option value="mindanao">Mindanao</option>
+<option value="luzon">Luzon</option>
+<option value="papua_new_guinea">Papua New Guinea</option>
+<option value="thailand">Thailand</option>
+<option value="vietnam">Vietnam</option>
+</select>
+</div>
+<div>
+<label for="al">Altitude</label>
+<select id="al">
+<option value="lowland">Lowland (under 300m)</option>
+<option value="mid_altitude">Mid (300 to 900m)</option>
+<option value="highland">Highland (over 900m)</option>
+</select>
+</div>
+</div>
+<label for="rf">Rainfall (mm per year)</label>
+<select id="rf">
+<option value="under_1500">Under 1,500 mm</option>
+<option value="1500_2500">1,500 to 2,500 mm</option>
+<option value="2500_3500" selected>2,500 to 3,500 mm</option>
+<option value="over_3500">Over 3,500 mm</option>
+</select>
+<button onclick="runCsc()">Score climate suitability</button>
+<div id="csr"></div>
+</section>
+
+<section>
+<h2>Use in your own page</h2>
+<pre><code>&lt;script type="module"&gt;
+import { calculateCoverCropPlan } from
+  'https://cdn.jsdelivr.net/gh/chemiseedkudzuseeds/tropical-cover-crop-calculator@main/src/cover-crop-calculator.js';
+const plan = calculateCoverCropPlan({ hectares: 25, cropSystem: 'oil_palm_immature' });
+&lt;/script&gt;</code></pre>
+</section>
+
+<section>
+<h2>Citation</h2>
+<p>If you use these tools or the companion dataset, please cite:</p>
+<pre>Abdul, Shaharil and Chemiseed Sdn. Bhd. (2026). Tropical Cover Crop Calculator: open-source seed-rate, nitrogen-fixation, and climate-suitability tools for tropical cover crops. Version 1.0.0. https://doi.org/10.5281/zenodo.20244236</pre>
+</section>
+
+<footer>
+Source on <a href="https://github.com/chemiseedkudzuseeds/tropical-cover-crop-calculator">GitHub</a>.
+Companion dataset on <a href="https://doi.org/10.5281/zenodo.20244236">Zenodo</a>.
+Field notes on <a href="https://chemiseed.substack.com">Substack</a>.
+Maintained by <a href="https://chemiseed.com">Chemiseed Sdn. Bhd.</a> of Malaysia.
+</footer>
+
+<script type="module">
+import { calculateCoverCropPlan } from 'https://cdn.jsdelivr.net/gh/chemiseedkudzuseeds/tropical-cover-crop-calculator@main/src/cover-crop-calculator.js';
+import { calculateClimateSuitability } from 'https://cdn.jsdelivr.net/gh/chemiseedkudzuseeds/tropical-cover-crop-calculator@main/src/climate-suitability-calculator.js';
+
+window.runCcc = () => {
+  try {
+    const plan = calculateCoverCropPlan({
+      hectares: parseFloat(document.getElementById('ha').value),
+      cropSystem: document.getElementById('cs').value
+    });
+    document.getElementById('ccr').innerHTML = '<div class="result"><h3>Seed plan</h3><pre>' + JSON.stringify(plan, null, 2) + '</pre></div>';
+  } catch (e) {
+    document.getElementById('ccr').innerHTML = '<div class="result"><h3>Error</h3><pre>' + e.message + '</pre></div>';
+  }
+};
+window.runCsc = () => {
+  try {
+    const score = calculateClimateSuitability({
+      region: document.getElementById('rg').value,
+      altitude: document.getElementById('al').value,
+      rainfall: document.getElementById('rf').value
+    });
+    document.getElementById('csr').innerHTML = '<div class="result"><h3>Suitability score</h3><pre>' + JSON.stringify(score, null, 2) + '</pre></div>';
+  } catch (e) {
+    document.getElementById('csr').innerHTML = '<div class="result"><h3>Error</h3><pre>' + e.message + '</pre></div>';
+  }
+};
+</script>
+</body>
+</html>
